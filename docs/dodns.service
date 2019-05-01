@@ -1,0 +1,9 @@
+[Unit]
+Description=Runs DigitalOcean DNS Updater
+Wants=dodns.timer
+
+[Service]
+ExecStart=/opt/bin/dodns archbox.arjunnaik.in
+
+[Install]
+WantedBy=multi-user.target
