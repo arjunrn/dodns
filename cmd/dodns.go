@@ -10,7 +10,7 @@ import (
 
 var rootCmd = &cobra.Command{
 	Short: "dodns is a modern dynamic dns",
-	Run:   synchronizeCmd,
+	RunE:  synchronizeCmd,
 }
 
 func Execute() {
@@ -20,6 +20,6 @@ func Execute() {
 	}
 }
 
-func synchronizeCmd(cmd *cobra.Command, args []string) {
-	pkg.Run(args)
+func synchronizeCmd(cmd *cobra.Command, args []string) error {
+	return pkg.Run(args)
 }
