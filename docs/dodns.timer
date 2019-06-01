@@ -1,0 +1,12 @@
+[Unit]
+Description=Run DigitalOcean DNS Updater every 15 minutes
+Requires=dodns.service
+
+[Timer]
+Unit=dodns.service
+OnUnitInactiveSec=15m
+RandomizedDelaySec=15m
+AccuracySec=1s
+
+[Install]
+WantedBy=timers.target
