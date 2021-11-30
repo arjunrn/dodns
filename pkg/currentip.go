@@ -15,13 +15,13 @@ type ipifyIP struct {
 }
 
 type ipifyResponse struct {
-	Ip string `json:"ip"`
+	IP string `json:"ip"`
 }
 
 func (ipifyIP) Get() (net.IP, error) {
 	resp, err := http.Get("https://api.ipify.org?format=json")
 	if err != nil {
-		return nil, fmt.Errorf("failed to query ipify: %v", err)
+		return nil, fmt.Errorf("failed to query ipify: %w", err)
 	}
 	defer resp.Body.Close()
 	decoder := json.NewDecoder(resp.Body)
@@ -30,10 +30,10 @@ func (ipifyIP) Get() (net.IP, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to decode response")
 	}
-	if decoded.Ip == "" {
+	if decoded.IP == "" {
 		return nil, fmt.Errorf("could not decode ip")
 	}
-	ip := net.ParseIP(decoded.Ip)
+	ip := net.ParseIP(decoded.IP)
 	if ip == nil {
 		return nil, fmt.Errorf("ipify return invalid ip")
 	}
