@@ -3,7 +3,7 @@ module github.com/arjunrn/dodns
 go 1.17
 
 require (
-	github.com/digitalocean/godo v1.72.0
+	github.com/digitalocean/godo v1.75.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.2.1
 	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8
