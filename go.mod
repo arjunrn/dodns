@@ -1,6 +1,6 @@
 module github.com/arjunrn/dodns
 
-go 1.17
+go 1.19
 
 require (
 	github.com/digitalocean/godo v1.78.0
