@@ -6,7 +6,7 @@ require (
 	github.com/digitalocean/godo v1.78.0
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/cobra v1.4.0
-	golang.org/x/oauth2 v0.0.0-20220411215720-9780585627b5
+	golang.org/x/oauth2 v0.23.0
 )
 
 require (
